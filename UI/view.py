@@ -26,7 +26,7 @@ class View(ft.UserControl):
         #ROW1
         self._txtInDurata = ft.TextField(label="Durata")
         self._btnCreaGrafo = ft.ElevatedButton(text="Crea Grafo",
-                                               on_click=self._controller.handleCreaGrafo)
+                                               on_click=self._controller.handle_build_graph)
         row1 = ft.Row([
             ft.Container(self._txtInDurata, width=300),
             ft.Container(self._btnCreaGrafo, width=300)
@@ -34,9 +34,9 @@ class View(ft.UserControl):
         self._page.controls.append(row1)
 
         #ROW2
-        self._ddAlbum = ft.Dropdown(label="Album", on_change=self._controller.getSelectedAlbum)
+        self._ddAlbum = ft.Dropdown(label="Album", disabled=False)
         self._btnAnalisiComp = ft.ElevatedButton(text = "Analisi Componente.",
-                                                 on_click=self._controller.handleAnalisiComp)
+                                                 on_click=self._controller.handle_analisi_comp)
 
         row2 = ft.Row([
             ft.Container(self._ddAlbum, width=300),
@@ -47,7 +47,7 @@ class View(ft.UserControl):
         #ROW3
         self._txtInSoglia = ft.TextField(label="Soglia")
         self._btnSetAlbum = ft.ElevatedButton(text="Set di Album",
-                                               on_click=self._controller.handleGetSetAlbum)
+                                               on_click=self._controller.handle_get_set_album)
         row3 = ft.Row([
             ft.Container(self._txtInSoglia, width=300),
             ft.Container(self._btnSetAlbum, width=300)
